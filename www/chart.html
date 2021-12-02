@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+    <meta name="description" content="Suha - Multipurpose Ecommerce Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#100DD1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
+    <!-- Title-->
+    <title>Suha - Multipurpose Ecommerce Mobile HTML Template</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap">
+    <!-- Favicon-->
+    <link rel="icon" href="assets/img/icons/icon-72x72.png">
+    <!-- Apple Touch Icon-->
+    <link rel="apple-touch-icon" href="assets/img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/icon-180x180.png">
+    <!-- CSS Libraries-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest-->
+    <link rel="manifest" href="manifest.json">
+    <script>
+        WebFontConfig = {
+            google:
+                { families: ["Open Sans",] }, active: function () {
+                    DrawTheChart(ChartData, ChartOptions, "chart-01", "Bar")
+                }
+        };
+    </script>
+    <script asyn src="https://charts.livegap.com/js/webfont.js">
+    </script>
+    <script src="https://charts.livegap.com/js/Chart.min.js"></script>
+    <script>
+        function DrawTheChart(ChartData, ChartOptions, ChartId, ChartType) {
+            eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d")).' + ChartType + '(ChartData,ChartOptions);document.getElementById(ChartId).getContext("2d").stroke();')
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Preloader-->
+    <div class="preloader" id="preloader">
+        <div class="spinner-grow text-secondary" role="status">
+            <div class="sr-only">Loading...</div>
+        </div>
+    </div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+        <div class="container h-100 d-flex align-items-center justify-content-between">
+            <!-- Back Button-->
+            <div class="back-button"><a href="home.html">
+                    <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z">
+                        </path>
+                    </svg></a></div>
+            <!-- Page Title-->
+            <div class="page-heading">
+                <h6 class="mb-0">Thống kê</h6>
+            </div>
+            <!-- Navbar Toggler-->
+            <div class="suha-navbar-toggler d-flex justify-content-between flex-wrap" id="suhaNavbarToggler">
+                <span></span><span></span><span></span></div>
+        </div>
+    </div>
+    <!-- Sidenav Black Overlay-->
+    <div class="sidenav-black-overlay"></div>
+    <!-- Side Nav Wrapper-->
+    <div class="suha-sidenav-wrapper" id="sidenavWrapper">
+        <!-- Sidenav Profile-->
+        <div class="sidenav-profile">
+          <div class="user-profile"><img src="img/user.jpg" alt=""></div>
+          <div class="user-info">
+            <h6 class="user-name mb-0">Phạm QT</h6>
+          </div>
+        </div>
+        <!-- Sidenav Nav-->
+        <ul class="sidenav-nav ps-0">
+          <li><a href="#"><i class="lni lni-user"></i>Thông tin tài khoản</a></li>
+          <li><a href="#"><i class="lni lni-alarm lni-tada-effect"></i>Nâng cấp VIP</li>
+          <li><a href="#"><i class="lni lni-empty-file"></i>Hỗ trợ</a></li>
+          <li><a href="#"><i class="lni lni-heart"></i></i>Báo cáo</a></li>
+          <li><a href="index.html"><i class="lni lni-power-switch"></i>Đăng xuất</a></li>
+        </ul>
+        <!-- Go Back Button-->
+        <div class="go-home-btn" id="goHomeBtn"><i class="lni lni-arrow-left"></i></div>
+      </div>
+    <div class="page-content-wrapper">
+        <div class="container">
+            <!-- Checkout Wrapper-->
+            <div class="checkout-wrapper-area py-3">
+                <!-- Billing Address-->
+                <div class="billing-information-card mb-3">
+                    <div class="card billing-information-title-card bg-danger">
+                        <div class="card-body">
+                            <h6 class="text-center mb-0 text-white">Doanh số bán hàng</h6>
+                        </div>
+                    </div>
+                    <div class="card user-data-card">
+                        <div class="card-body">
+                            <div class="single-profile-data d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center"><i class="fa fa-check-circle-o"
+                                        aria-hidden="true"></i><span>Số hóa đơn</span></div>
+                                <div class="data-content">200</div>
+                            </div>
+                            <div class="single-profile-data d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center"><i class="fa fa-check-circle-o"
+                                        aria-hidden="true"></i><span>Tổng giá trị hóa đơn</span></div>
+                                <div class="data-content">100,000,000</div>
+                            </div>
+                            <div class="single-profile-data d-flex align-items-center justify-content-between">
+                                <div class="title d-flex align-items-center"><i class="fa fa-check-circle-o"
+                                        aria-hidden="true"></i><span>Tiền vốn</span></div>
+                                <div class="data-content">70,000,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shipping Method Choose-->
+                <div class="shipping-method-choose mb-3">
+                    <div class="card shipping-method-choose-title-card bg-success">
+                        <div class="card-body">
+                            <h6 class="text-center mb-0 text-white">Doanh thu</h6>
+                        </div>
+                    </div>
+                    <div class="card shipping-method-choose-card">
+                        <div class="card-body">
+                            <div class="shipping-method-choose">
+                                <ul class="ps-0">
+                                    <li>
+                                        <input id="fastShipping" type="radio" name="selector" disabled>
+                                        <label for="fastShipping">Doanh thu: 50,000,000đ</label>
+                                        <div class="check"></div>
+                                    </li>
+                                    <li>
+                                        <input id="normalShipping" type="radio" name="selector" disabled>
+                                        <label for="normalShipping">Lợi nhuận: 20,000,000đ </label>
+                                        <div class="check"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cart Amount Area-->
+                <div class="card cart-amount-area">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <canvas id="chart-01" width="245" height="140"
+                            style="background-color:rgba(255,255,255,1.00);border-radius:0px;width:245px;height:140px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px"></canvas>
+                        <script> function MoreChartOptions() { } var ChartData = {
+                                labels: ["January",
+                                    "February", "March", "April", "May", "June", "July",], datasets: [{ fillColor: "rgba(52,152,219,1)", strokeColor: "rgba(52,152,219,0.5)", pointColor: "rgba(52,152,219,1)", markerShape: "circle", pointStrokeColor: "rgba(255,255,255,1.00)", data: [65, 30, 80, 60, 56, 55, 40,], title: "Doanh Thu" }, { fillColor: "rgba(46,204,113,1)", strokeColor: "rgba(46,204,113,1)", pointColor: "rgba(46,204,113,1)", markerShape: "circle", pointStrokeColor: "rgba(255,255,255,1.00)", data: [21, 48, 40, 19, 96, 27, 99,], title: "Tiền Hàng" },]
+                            }; ChartOptions = { decimalSeparator: ".", thousandSeparator: ",", spaceLeft: 12, spaceRight: 12, spaceTop: 12, spaceBottom: 12, scaleLabel: "<%=value+''%>", yAxisMinimumInterval: 1, scaleShowLabels: true, scaleShowLine: true, scaleLineStyle: "solid", scaleLineWidth: 1, scaleLineColor: "rgba(0,0,0,0.6)", scaleOverlay: false, scaleOverride: false, scaleSteps: 10, scaleStepWidth: 10, scaleStartValue: 0, inGraphDataShow: true, inGraphDataTmpl: '<%=v3%>', inGraphDataFontFamily: "'Open Sans'", inGraphDataFontStyle: "normal bold", inGraphDataFontColor: "rgba(255,255,255,1.00)", inGraphDataFontSize: 12, inGraphDataPaddingX: 0, inGraphDataPaddingY: -5, inGraphDataAlign: "center", inGraphDataVAlign: "top", inGraphDataXPosition: 2, inGraphDataYPosition: 3, inGraphDataAnglePosition: 2, inGraphDataRadiusPosition: 2, inGraphDataRotate: 0, inGraphDataPaddingAngle: 0, inGraphDataPaddingRadius: 0, inGraphDataBorders: false, inGraphDataBordersXSpace: 1, inGraphDataBordersYSpace: 1, inGraphDataBordersWidth: 1, inGraphDataBordersStyle: "solid", inGraphDataBordersColor: "rgba(0,0,0,1)", legend: true, maxLegendCols: 5, legendBlockSize: 15, legendFillColor: 'rgba(255,255,255,0.00)', legendColorIndicatorStrokeWidth: 1, legendPosX: -2, legendPosY: 4, legendXPadding: 0, legendYPadding: 0, legendBorders: false, legendBordersWidth: 1, legendBordersStyle: "solid", legendBordersColors: "rgba(102,102,102,1)", legendBordersSpaceBefore: 5, legendBordersSpaceLeft: 5, legendBordersSpaceRight: 5, legendBordersSpaceAfter: 5, legendSpaceBeforeText: 5, legendSpaceLeftText: 5, legendSpaceRightText: 5, legendSpaceAfterText: 5, legendSpaceBetweenBoxAndText: 5, legendSpaceBetweenTextHorizontal: 5, legendSpaceBetweenTextVertical: 5, legendFontFamily: "'Open Sans'", legendFontStyle: "normal normal", legendFontColor: "rgba(0,0,0,1)", legendFontSize: 15, showYAxisMin: false, rotateLabels: "smart", xAxisBottom: true, yAxisLeft: true, yAxisRight: false, graphTitleSpaceBefore: 5, graphTitleSpaceAfter: 5, graphTitleBorders: false, graphTitleBordersXSpace: 1, graphTitleBordersYSpace: 1, graphTitleBordersWidth: 1, graphTitleBordersStyle: "solid", graphTitleBordersColor: "rgba(0,0,0,1)", graphTitle: "Doanh Thu", graphTitleFontFamily: "'Open Sans'", graphTitleFontStyle: "normal normal", graphTitleFontColor: "rgba(52,152,219,1)", graphTitleFontSize: 26, graphSubTitleSpaceBefore: 5, graphSubTitleSpaceAfter: 5, graphSubTitleBorders: false, graphSubTitleBordersXSpace: 1, graphSubTitleBordersYSpace: 1, graphSubTitleBordersWidth: 1, graphSubTitleBordersStyle: "solid", graphSubTitleBordersColor: "rgba(0,0,0,1)", graphSubTitle: "", graphSubTitleFontFamily: "'Open Sans'", graphSubTitleFontStyle: "normal normal", graphSubTitleFontColor: "rgba(102,102,102,1)", graphSubTitleFontSize: 16, scaleFontFamily: "'Open Sans'", scaleFontStyle: "normal normal", scaleFontColor: "rgba(0,0,0,1)", scaleFontSize: 12, pointLabelFontFamily: "'Open Sans'", pointLabelFontStyle: "normal normal", pointLabelFontColor: "rgba(102,102,102,1)", pointLabelFontSize: 12, angleShowLineOut: true, angleLineStyle: "solid", angleLineWidth: 1, angleLineColor: "rgba(0,0,0,0.1)", percentageInnerCutout: 50, scaleShowGridLines: true, scaleGridLineStyle: "solid", scaleGridLineWidth: 1, scaleGridLineColor: "rgba(0,0,0,0.1)", scaleXGridLinesStep: 1, scaleYGridLinesStep: 3, segmentShowStroke: true, segmentStrokeStyle: "solid", segmentStrokeWidth: 2, segmentStrokeColor: "rgba(255,255,255,1.00)", datasetStroke: true, datasetFill: true, datasetStrokeStyle: "solid", datasetStrokeWidth: 2, bezierCurve: true, bezierCurveTension: 0.4, pointDotStrokeStyle: "solid", pointDotStrokeWidth: 1, pointDotRadius: 3, pointDot: true, scaleTickSizeBottom: 5, scaleTickSizeTop: 5, scaleTickSizeLeft: 5, scaleTickSizeRight: 5, graphMin: 0, barShowStroke: false, barBorderRadius: 0, barStrokeStyle: "solid", barStrokeWidth: 1, barValueSpacing: 15, barDatasetSpacing: 0, scaleShowLabelBackdrop: true, scaleBackdropColor: 'rgba(255,255,255,0.75)', scaleBackdropPaddingX: 2, scaleBackdropPaddingY: 2, animation: false, onAnimationComplete: function () { MoreChartOptions() } };
+                            DrawTheChart(ChartData, ChartOptions, "chart-01", "Bar");</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Internet Connection Status-->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Footer Nav-->
+    <div class="footer-nav-area" id="footerNav">
+        <div class="container h-100 px-0">
+            <div class="suha-footer-nav h-100">
+                <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+                    <li class="active"><a href="#"><i class="lni lni-home"></i>Trang chủ</a></li>
+                    <li><a href="message.html"><i class="lni lni-life-ring"></i>Tin nhắn</a></li>
+                    <li><a href="donhang.html"><i class="lni lni-shopping-basket"></i>Hóa đơn</a></li>
+                    <li><a href="settings.html"><i class="lni lni-cog"></i>Cài đặt</a></li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+    <!-- All JavaScript Files-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/default/jquery.passwordstrength.js"></script>
+    <script src="assets/js/default/dark-mode-switch.js"></script>
+    <script src="assets/js/default/no-internet.js"></script>
+    <script src="assets/js/default/active.js"></script>
+    <script src="assets/js/pwa.js"></script>
+</body>
+
+</html>
