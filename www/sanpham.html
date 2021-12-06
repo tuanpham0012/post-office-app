@@ -1,467 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
-    <meta name="description" content="Suha - Multipurpose Ecommerce Mobile HTML Template">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#100DD1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
-    <!-- Title-->
-    <title>Suha - Multipurpose Ecommerce Mobile HTML Template</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap">
-    <!-- Favicon-->
-    <link rel="icon" href="assets/img/icons/icon-72x72.png">
-    <!-- Apple Touch Icon-->
-    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icons/icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="assets/img/icons/icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/icon-180x180.png">
-    <!-- CSS Libraries-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Stylesheet-->
-    <link rel="stylesheet" href="style.css">
-    <!-- Web App Manifest-->
-    <link rel="manifest" href="manifest.json">
-  </head>
-  <body>
-    <!-- Preloader-->
-    <div class="preloader" id="preloader">
-      <div class="spinner-grow text-secondary" role="status">
-        <div class="sr-only">Loading...</div>
-      </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+  <meta name="description" content="Suha - Multipurpose Ecommerce Mobile HTML Template">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#100DD1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
+  <!-- Title-->
+  <title>Suha - Multipurpose Ecommerce Mobile HTML Template</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap">
+  <!-- Favicon-->
+  <link rel="icon" href="assets/img/icons/icon-72x72.png">
+  <!-- Apple Touch Icon-->
+  <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="assets/img/icons/icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/icon-180x180.png">
+  <!-- CSS Libraries-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Stylesheet-->
+  <link rel="stylesheet" href="style.css">
+  <!-- Web App Manifest-->
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <!-- Preloader-->
+  <div class="preloader" id="preloader">
+    <div class="spinner-grow text-secondary" role="status">
+      <div class="sr-only">Loading...</div>
     </div>
-    <!-- Header Area-->
-    <div class="header-area" id="headerArea">
-      <div class="container h-100 d-flex align-items-center justify-content-between">
-        <!-- Back Button-->
-        <div class="back-button"><a href="home.html">
-            <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
-            </svg></a></div>
-        <!-- Page Title-->
-        <div class="page-heading">
-          <h6 class="mb-0">Sản phẩm</h6>
+  </div>
+  <!-- Header Area-->
+  <div class="header-area" id="headerArea">
+    <div class="container h-100 d-flex align-items-center justify-content-between">
+      <!-- Back Button-->
+      <div class="back-button"><a href="home.html">
+          <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z">
+            </path>
+          </svg></a></div>
+      <!-- Page Title-->
+      <div class="page-heading">
+        <h6 class="mb-0">Mua sắm Online</h6>
+      </div>
+      <!-- Filter Option-->
+      <div class="filter-option" id=""><i class="lni lni-cog"></i></div>
+    </div>
+  </div>
+  <!-- Sidenav Black Overlay-->
+  <div class="sidenav-black-overlay"></div>
+  <!-- Side Nav Wrapper-->
+  <div class="suha-sidenav-wrapper filter-nav" id="sidenavWrapper">
+    <!-- Catagory Sidebar Area-->
+    <div class="catagory-sidebar-area">
+      <!-- Catagory-->
+
+    </div>
+    <!-- Go Back Button-->
+    <div class="go-home-btn" id="goHomeBtn"><i class="lni lni-arrow-left"></i></div>
+  </div>
+  <div class="page-content-wrapper">
+    <!-- Top Products-->
+    <div class="top-products-area py-3">
+      <div class="container">
+        <div class="section-heading d-flex align-items-center justify-content-between">
+          <h6>Tất cả sản phẩm</h6>
         </div>
-        <!-- Filter Option-->
-        <div class="filter-option" id=""><i class="lni lni-cog"></i></div>
-      </div>
-    </div>
-    <!-- Sidenav Black Overlay-->
-    <div class="sidenav-black-overlay"></div>
-    <!-- Side Nav Wrapper-->
-    <div class="suha-sidenav-wrapper filter-nav" id="sidenavWrapper">
-      <!-- Catagory Sidebar Area-->
-      <div class="catagory-sidebar-area">
-        <!-- Catagory-->
-        
-      </div>
-      <!-- Go Back Button-->
-      <div class="go-home-btn" id="goHomeBtn"><i class="lni lni-arrow-left"></i></div>
-    </div>
-    <div class="page-content-wrapper">
-      <!-- Top Products-->
-      <div class="top-products-area py-3">
-        <div class="container">
-          <div class="section-heading d-flex align-items-center justify-content-between">
-            <h6>Tất cả sản phẩm</h6>
-            <!-- Select Product Catagory-->
-            <div class="select-product-catagory">
-              <select class="form-select" id="products-filler" name="selectProductCatagory" aria-label="Default select example">
-                <option selected>Tất cả sản phẩm</option>
-                <option value="1">Sản phẩm bán chạy</option>
-                <option value="2">Sản phẩm sắp hết</option>
-                <option value="3">Tồn kho</option>
-              </select>
-            </div>
-          </div>
-          <div class="product-catagories">
-            <div class="row g-3">
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-all'>Tất cả</a></div>
-              <!-- Single Catagory-->
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-iphone'>Iphone</a></div>
-              <!-- Single Catagory-->
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-ipad'>Ipad</a></div>
-              <!-- Single Catagory-->
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-watch'>Watch</a></div>
-            </div>
-          </div>
-          <div class="row g-3" id="products">
-            <!-- Single Weekly Product Card-->
-            
-          </div>
+
+        <div class="row g-3" id="products">
+          <!-- Single Weekly Product Card-->
+
         </div>
       </div>
     </div>
-    <!-- Internet Connection Status-->
-    <div class="internet-connection-status" id="internetStatus"></div>    
-    <!-- All JavaScript Files-->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/default/jquery.passwordstrength.js"></script>
-    <script src="assets/js/default/dark-mode-switch.js"></script>
-    <script src="assets/js/default/no-internet.js"></script>
-    <script src="assets/js/default/active.js"></script>
-    <script src="assets/js/pwa.js"></script>
+  </div>
+  <!-- Footer Nav-->
+  <div class="footer-nav-area" id="footerNav">
+    <div class="container h-100 px-0">
+      <div class="suha-footer-nav h-100">
+        <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+          <li class="active"><a href="./cart.html"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Giỏ hàng</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Internet Connection Status-->
+  <div class="internet-connection-status" id="internetStatus"></div>
+  <!-- All JavaScript Files-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.easing.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <script src="assets/js/jquery.countdown.min.js"></script>
+  <script src="assets/js/default/jquery.passwordstrength.js"></script>
+  <script src="assets/js/default/dark-mode-switch.js"></script>
+  <script src="assets/js/default/no-internet.js"></script>
+  <script src="assets/js/default/active.js"></script>
+  <script src="assets/js/pwa.js"></script>
 
-    <script>
-      var phones= [
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 13 Pro Max",
-        "slug": "apple_iphone_13_pro_max-11089",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13_pro_max-11089"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 13 Pro",
-        "slug": "apple_iphone_13_pro-11102",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13_pro-11102"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 13",
-        "slug": "apple_iphone_13-11103",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13-11103"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 13 mini",
-        "slug": "apple_iphone_13_mini-11104",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13_mini-11104"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad mini (2021)",
-        "slug": "apple_ipad_mini_(2021)-11105",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-mini-2021.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_mini_(2021)-11105"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad 10.2 (2021)",
-        "slug": "apple_ipad_10_2_(2021)-11106",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-102-2021-.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_10_2_(2021)-11106"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 7 Aluminum",
-        "slug": "apple_watch_series_7_aluminum-11107",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-7-1.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_7_aluminum-11107"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Pro 12.9 (2021)",
-        "slug": "apple_ipad_pro_12_9_(2021)-10864",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-129-2021.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_pro_12_9_(2021)-10864"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Pro 11 (2021)",
-        "slug": "apple_ipad_pro_11_(2021)-10865",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-11-2021.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_pro_11_(2021)-10865"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 12 Pro Max",
-        "slug": "apple_iphone_12_pro_max-10237",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12-pro-max-.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_12_pro_max-10237"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 12 Pro",
-        "slug": "apple_iphone_12_pro-10508",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12-pro--.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_12_pro-10508"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 12",
-        "slug": "apple_iphone_12-10509",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_12-10509"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 12 mini",
-        "slug": "apple_iphone_12_mini-10510",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12-mini.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_12_mini-10510"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Air (2020)",
-        "slug": "apple_ipad_air_(2020)-10444",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-air4-2020.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_air_(2020)-10444"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad 10.2 (2020)",
-        "slug": "apple_ipad_10_2_(2020)-10445",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad8-102-inches-2020.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_10_2_(2020)-10445"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch SE",
-        "slug": "apple_watch_se-10446",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-se.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_se-10446"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 6 Aluminum",
-        "slug": "apple_watch_series_6_aluminum-10447",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-s6.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_6_aluminum-10447"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 6",
-        "slug": "apple_watch_series_6-10448",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-s6-steel.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_6-10448"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Edition Series 6",
-        "slug": "apple_watch_edition_series_6-10449",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-s6-titanium.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_edition_series_6-10449"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone SE (2020)",
-        "slug": "apple_iphone_se_(2020)-10170",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-se-2020.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_se_(2020)-10170"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Pro 12.9 (2020)",
-        "slug": "apple_ipad_pro_12_9_(2020)-10136",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-12-2020.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_pro_12_9_(2020)-10136"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Pro 11 (2020)",
-        "slug": "apple_ipad_pro_11_(2020)-10137",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-11-2020.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_pro_11_(2020)-10137"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 11 Pro Max",
-        "slug": "apple_iphone_11_pro_max-9846",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11-pro.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_11_pro_max-9846"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 11 Pro",
-        "slug": "apple_iphone_11_pro-9847",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11-pro-max-.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_11_pro-9847"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone 11",
-        "slug": "apple_iphone_11-9848",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_11-9848"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad 10.2 (2019)",
-        "slug": "apple_ipad_10_2_(2019)-9857",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad7-102-inches.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_10_2_(2019)-9857"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Edition Series 5",
-        "slug": "apple_watch_edition_series_5-9860",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-edition-series-5.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_edition_series_5-9860"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 5",
-        "slug": "apple_watch_series_5-9859",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-series-5.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_5-9859"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 5 Aluminum",
-        "slug": "apple_watch_series_5_aluminum-9858",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-aluminum-series-5.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_5_aluminum-9858"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Air (2019)",
-        "slug": "apple_ipad_air_(2019)-9638",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-air3-2019.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_air_(2019)-9638"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad mini (2019)",
-        "slug": "apple_ipad_mini_(2019)-9637",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-mini-2019.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_mini_(2019)-9637"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Pro 12.9 (2018)",
-        "slug": "apple_ipad_pro_12_9_(2018)-9387",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-129-2018.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_pro_12_9_(2018)-9387"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad Pro 11 (2018)",
-        "slug": "apple_ipad_pro_11_(2018)-9386",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-pro-11-2018.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_pro_11_(2018)-9386"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone XS Max",
-        "slug": "apple_iphone_xs_max-9319",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-xs-max-new1.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_xs_max-9319"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone XS",
-        "slug": "apple_iphone_xs-9318",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-xs-new.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_xs-9318"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone XR",
-        "slug": "apple_iphone_xr-9320",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-xr-new.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_xr-9320"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 4",
-        "slug": "apple_watch_series_4-9321",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-series-4-steel.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_4-9321"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "Watch Series 4 Aluminum",
-        "slug": "apple_watch_series_4_aluminum-9322",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-watch-series-4-aluminum.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_watch_series_4_aluminum-9322"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPad 9.7 (2018)",
-        "slug": "apple_ipad_9_7_(2018)-9142",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-97-2018.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_ipad_9_7_(2018)-9142"
-      },
-      {
-        "brand": "Apple ",
-        "phone_name": "iPhone X",
-        "slug": "apple_iphone_x-8858",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-x.jpg",
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_x-8858"
-      }
-    ]
-      $(document).ready(function(){
-        addData();
-        showData(phones);
+  <script>
 
-      })
+    axios({
+      method: 'get',
+      url: 'http://localhost:3000/sanpham',
 
-      function addData(){
-        phones.forEach((phone,index) => {
-          phone.id = index;
-          phone.total = Math.floor(Math.random() * 150) + 20;
-          phone.price = Math.floor(Math.random() * 1999) + 999;
-          phone.check = Math.random() >= 0.5;
-        });
-      }
-
-      function showData(data){
-        $('#products').empty();
-        data.forEach((phone,index) => {
-          let htm = `<div class="col-6 col-md-4 col-lg-3">
+    }).then(function (response) {
+      $('#products').empty();
+      response.data.forEach((item, index) => {
+        let htm = `<div class="col-6 col-md-4 col-lg-3">
                       <div class="card top-product-card">
-                        <div class="card-body"><a class="product-thumbnail d-block" href="./sp-detail.html"><img class="mb-2" src="${phone.image}" alt=""></a><a class="product-title d-block" href="single-product.html">${phone.phone_name}</a>
-                          <p class="sale-price">${phone.price}</p>
+                        <div class="card-body"><a class="product-thumbnail d-block" href="./sp-detail.html?id=${item.id}"><img class="mb-2" src="${item.image}" alt=""></a><a class="product-title d-block" href="single-product.html">${item.title}</a>
+                          <p class="sale-price">${item.price}$</p>
                           <div class="product-rating"></div><a class="btn btn-success btn-sm" href="#"><i class="lni lni-plus"></i></a>
                         </div>
                       </div>
                     </div>`;
-                    
-          $('#products').append(htm);
-        });
-        console.log(data);
-      }
-      $('#products-all').click( () =>{
-        showData(phones);
-      })
-      $('#products-iphone').click( () =>{
-        const dt = this.phones.filter(x => {return x.slug.indexOf('iphone') >= 0});
-        showData(dt);
-      })
-      $('#products-ipad').click( () =>{
-        const dt = this.phones.filter(x => {return x.slug.indexOf('ipad') >= 0});
-        showData(dt);
-      })
-      $('#products-watch').click( () =>{
-        const dt = this.phones.filter(x => {return x.slug.indexOf('watch') >= 0});
-        showData(dt);
-      })
 
-      $('#products-filler').change(function(){
-        let id = $('#products-filler').val();
-        if(id == 1){
-          const dt = phones.filter(x => {return x.check});
-          showData(dt);
-        }else if(id == 2){
-          const dt = phones.filter(x => {return x.total < 30});
-          showData(dt);
-        }else if(id == 3){
-          const dt = phones.filter(x => {return x.total > 140});
-          showData(dt);
-        }else{
-          showData(phones);
-        }
-      })
-    </script>
-  </body>
+        $('#products').append(htm);
+      });
+
+    });
+  
+  </script>
+</body>
+
 </html>

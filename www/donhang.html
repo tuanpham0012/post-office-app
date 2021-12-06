@@ -243,11 +243,20 @@
         $('#list').empty();
         response.forEach((data, index) => {
           let sp = '';
-          data.hang_hoa.forEach((d,i) =>{
+          let gt = 0;
+          if(data.hang_hoa.length > 0){
+              data.hang_hoa.forEach((d,i) =>{
+              sp+= `<div class="single-profile-data d-flex align-items-center justify-content-between">
+                      <div class="content"><i class="lni lni-star-filled"></i>&nbsp;&nbsp;<span>${d.mo_ta} x ${d.so_luong}</span></div>
+                    </div>`;
+              gt += parseInt(d.gia_tri);
+            })
+          }else{
             sp+= `<div class="single-profile-data d-flex align-items-center justify-content-between">
-                    <div class="content"><i class="lni lni-star-filled"></i>&nbsp;&nbsp;<span>${d.mo_ta} x ${d.so_luong}</span></div>
-                  </div>`
-          })
+                      <div class="content"><i class="lni lni-star-filled"></i>&nbsp;&nbsp;<span>${data.hang_hoa.mo_ta} x ${data.hang_hoa.so_luong}</span></div>
+                    </div>`;
+          }
+          
           let htm = `<div class="billing-information-card mb-3">
                       <div class="card shipping-method-choose-title-card bg-success">
                         <div class="card-body">
@@ -257,7 +266,7 @@
                       <div class="card user-data-card">
                         <div class="card-body">                                   
                           <div class="single-profile-data d-flex align-items-center justify-content-between">
-                            <div class="content"><i class="lni lni-user"></i>&nbsp;&nbsp;<span>${data.nguoi_gui} - ${data.sdt_nguoi_gui}</span></div>
+                            <div class="content"><i class="lni lni-user"></i>&nbsp;&nbsp;<span>${data.nguoi_nhan}</span></div>
                           </div>
                           <div class="single-profile-data d-flex align-items-center justify-content-between">
                             <div class="content"><i class="lni lni-phone"></i>&nbsp;&nbsp;<span>${data.sdt_nguoi_nhan}</span></div>
@@ -267,13 +276,13 @@
                           </div>
                           ` + sp +`
                           <div class="single-profile-data d-flex align-items-center justify-content-between">
-                            <div class="content"><i class="lni lni-dollar"></i>&nbsp;&nbsp;<span>1000000đ</span></div>
+                            <div class="content"><i class="lni lni-dollar"></i>&nbsp;&nbsp;<span>${gt}đ</span></div>
 
                           </div>
                           <!-- Edit Address-->
                           <div class="gr-btn">
                             <button class="btn">Sao chép đơn</button>
-                            <a href="./suadonhang.html"><button class="btn">Sửa đơn</button></a>
+                            <a href="./suadonhang.html?id=${data.id}"><button class="btn">Sửa đơn</button></a>
                             <button class="btn">Hủy đơn</button>
                           </div>
                         </div>

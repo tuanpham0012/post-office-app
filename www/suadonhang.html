@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Stylesheet-->
     <link rel="stylesheet" href="style.css">
     <!-- Web App Manifest-->
@@ -43,7 +44,7 @@
     <div class="header-area" id="headerArea">
       <div class="container h-100 d-flex align-items-center justify-content-between">
         <!-- Back Button-->
-        <div class="back-button"><a href="donhang-onl.html">
+        <div class="back-button"><a href="./home.html">
             <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
             </svg></a></div>
@@ -89,21 +90,22 @@
               <span class="sender">Người gửi</span><br/><br/>
               <div class="mb-3">
                   
-                  <input class="form-control" type="text" value="Phạm Quốc Tuấn - 0983776901">
+                  <input class="form-control" type="text" id="nguoi_gui" value="Phạm Quốc Tuấn" placeholder="Tên người gửi">
+                  <br/><input class="form-control" type="text" id="sdt_nguoi_gui" value="0983776901" placeholder="Số điện thoại">
               </div>
               <span class="sender">Người nhận</span><br/><br/>
               <form action="" method="">
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-phone"></i><span>Điện thoại</span></div>
-                  <input class="form-control" type="text" placeholder="Nhập số điện thoại">
+                  <input class="form-control" type="text" id="sdt_nguoi_nhan" placeholder="Nhập số điện thoại">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-user"></i><span>Họ tên</span></div>
-                  <input class="form-control" type="text" placeholder="Tên người nhận">
+                  <input class="form-control" type="text" id="nguoi_nhan" placeholder="Tên người nhận">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2"><i class="lni lni-map-marker"></i><span>Địa chỉ</span></div>
-                  <input class="form-control" type="text" placeholder="Địa chỉ người nhận">
+                  <input class="form-control" type="text" id="dia_chi" placeholder="Địa chỉ người nhận">
                 </div>
               </form>
             </div>
@@ -117,19 +119,19 @@
                 <form action="" method="">
                   <div class="mb-3">
                     <div class="title mb-2">*<span>Mô tả</span></div>
-                    <input class="form-control" type="text" value="">
+                    <input class="form-control" id="mo_ta" type="text" value="">
                   </div>
                   <div class="mb-3">
                     <div class="title mb-2">*</i><span>Giá trị hàng hóa</span></div>
-                    <input class="form-control" type="number" value="0">
+                    <input class="form-control" id="gia_tri" type="number" value="0">
                   </div>
                   <div class="mb-3">
                     <div class="title mb-2">*<span>Trọng lượng (g)</span></div>
-                    <input class="form-control" type="number" value="0">
+                    <input class="form-control" id="trong_luong" type="number" value="0">
                   </div>
                   <div class="mb-3">
                       <div class="title mb-2">*<span>Số lượng</span></div>
-                      <input class="form-control" type="number" min="1" value="1">
+                      <input class="form-control" id="so_luong" type="number" min="1" value="1">
                     </div>
                 </form>
               </div>
@@ -144,14 +146,14 @@
               <form name = 'form-pro' action="" method="">
                 <div class="mb-3">
                   <div class="title mb-2">Mã khuyến mại</span></div>
-                  <input class="form-control" type="text" value="">
+                  <input class="form-control" id="ma_khuyen_mai" type="text" value="">
                 </div>
                 <div class="mb-3">
                   <div class="title mb-2">Mã đơn hàng</span></div>
                   <input class="form-control" type="text" value="">
                 </div>
                 <br/>
-                <button class="btn btn-success w-100" type="button" id="create">Tạo đơn hàng</button>
+                <button class="btn btn-success w-100" type="button" id="update">Cập nhật đơn hàng</button>
               </form>
             </div>
           </div>
@@ -160,20 +162,7 @@
     </div>
     <!-- Internet Connection Status-->
     <div class="internet-connection-status" id="internetStatus"></div>
-    
-    <!-- Footer Nav-->
-    <div class="footer-nav-area" id="footerNav">
-      <div class="container h-100 px-0">
-        <div class="suha-footer-nav h-100">
-          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
-            <li class="active"><a href="#"><i class="lni lni-home"></i>Trang chủ</a></li>
-            <li><a href="message.html"><i class="lni lni-life-ring"></i>Tin nhắn</a></li>
-            <li><a href="donhang.html"><i class="lni lni-shopping-basket"></i>Hóa đơn</a></li>
-            <li><a href="settings.html"><i class="lni lni-cog"></i>Cài đặt</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  
     <!-- All JavaScript Files-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
@@ -190,14 +179,50 @@
     <script>
       var url_string = window.location.href;
       var url = new URL(url_string);
-      var ma = url.searchParams.get("mahd");
-      var kh = url.searchParams.get("kh");
-      var tt = url.searchParams.get("Tt");
-      var ngay = url.searchParams.get("ngay");
+      var id = url.searchParams.get("id");
+      var data;
       
-      $('#Hd').html(ma);
-      $('#Kh').html(kh);
-      $('#Tt').html(tt);
+      axios({
+            method: 'get',
+            url: 'http://localhost:3000/donhang/'+id,
+            
+          }).then(function(response){
+            console.log(response.data);
+            data = response.data;
+            $('#nguoi_gui').val(data.nguoi_gui);
+            $('#sdt_nguoi_gui').val(data.sdt_nguoi_gui);
+            $('#nguoi_nhan').val(data.nguoi_nhan);
+            $('#sdt_nguoi_nhan').val(data.sdt_nguoi_nhan);
+            $('#dia_chi').val(data.dia_chi);
+            $('#gia_tri').val(data.hang_hoa[0].gia_tri);
+            $('#mo_ta').val(data.hang_hoa[0].mo_ta);
+            $('#trong_luong').val(data.hang_hoa[0].trong_luong),
+            $('#so_luong').val(data.hang_hoa[0].so_luong)
+            $('#ma_khuyen_mai').val(data.ma_khuyen_mai);
+          });
+      $('#update').click(function(){
+        axios({
+            method: 'patch',
+            url: 'http://localhost:3000/donhang/'+id,
+            data: {
+              nguoi_gui: $('#nguoi_gui').val(),
+              sdt_nguoi_gui: $('#sdt_nguoi_gui').val(),
+              nguoi_nhan: $('#nguoi_nhan').val(),
+              sdt_nguoi_nhan: $('#sdt_nguoi_nhan').val(),
+              dia_chi: $('#dia_chi').val(),
+              hang_hoa:[{
+                  "mo_ta": $('#mo_ta').val(),
+                  "gia_tri": $('#gia_tri').val(),
+                  "trong_luong": $('#trong_luong').val(),
+                  "so_luong": $('#so_luong').val()
+                }],
+              ma_khuyen_mai: $('#ma_khuyen_mai').val()
+            }
+          }).then(function(response){
+            alert('Cập nhật thông tin thành công!');
+            window.location.href = "./donhang.html";
+          });
+      })
     </script>
   </body>
 </html>

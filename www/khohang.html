@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Stylesheet-->
     <link rel="stylesheet" href="style.css">
     <!-- Web App Manifest-->
@@ -87,8 +88,6 @@
             </div>
           </div>
           <div class="row g-3" id="kho">
-            <!-- Single Weekly Product Card-->
-            <!-- Single Notification-->
             <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
               <div class="noti-info" >
                 <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
@@ -469,6 +468,59 @@
         $('#nguoi').hide();
 
       })
+
+      axios({
+            method: 'get',
+            url: 'http://localhost:3000/khohang',
+            
+          }).then(function(response){
+            $('#kho').empty();
+            console.log(response.data);
+            response.data.forEach(item => {
+              let htm = `<a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+                          <div class="noti-info" >
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">${item.chu_kho} - ${item.sdt}</span><br/>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>${item.dia_chi}</span>
+                          </div>
+                        </a>`;
+              $('#kho').append(htm);    
+            });
+            
+          });
+          axios({
+            method: 'get',
+            url: 'http://localhost:3000/khachhang',
+            
+          }).then(function(response){
+            console.log(response.data);
+            $('#khach').empty();
+            response.data.forEach(item => {
+              let htm = `<a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+                          <div class="noti-info" >
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">${item.ten} - ${item.sdt}</span><br/>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>${item.dia_chi}</span>
+                          </div>
+                        </a>`;
+              $('#khach').append(htm);    
+            });
+          });
+          axios({
+            method: 'get',
+            url: 'http://localhost:3000/nguoigui',
+            
+          }).then(function(response){
+            console.log(response.data);
+            $('#nguoi').empty();
+            response.data.forEach(item => {
+              let htm = `<a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+                          <div class="noti-info" >
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">${item.ten} - ${item.sdt}</span><br/>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>${item.dia_chi}</span>
+                          </div>
+                        </a>`;
+              $('#nguoi').append(htm);    
+            });
+          });
 
       // function showData(data){
       //   $('#products').empty();

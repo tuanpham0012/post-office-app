@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Stylesheet-->
     <link rel="stylesheet" href="style.css">
     <!-- Web App Manifest-->
@@ -112,21 +113,22 @@
                 <span class="sender">Người gửi</span><br/><br/>
                 <div class="mb-3">
                     
-                    <input class="form-control" type="text" value="Phạm Quốc Tuấn - 0983776901">
+                    <input class="form-control" type="text" id="nguoi_gui" value="Phạm Quốc Tuấn" placeholder="Tên người gửi">
+                    <br/><input class="form-control" type="text" id="sdt_nguoi_gui" value="0983776901" placeholder="Số điện thoại">
                 </div>
                 <span class="sender">Người nhận</span><br/><br/>
                 <form action="" method="">
                   <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-phone"></i><span>Điện thoại</span></div>
-                    <input class="form-control" type="text" placeholder="Nhập số điện thoại">
+                    <input class="form-control" type="text" id="sdt_nguoi_nhan" placeholder="Nhập số điện thoại">
                   </div>
                   <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-user"></i><span>Họ tên</span></div>
-                    <input class="form-control" type="text" placeholder="Tên người nhận">
+                    <input class="form-control" type="text" id="nguoi_nhan" placeholder="Tên người nhận">
                   </div>
                   <div class="mb-3">
                     <div class="title mb-2"><i class="lni lni-map-marker"></i><span>Địa chỉ</span></div>
-                    <input class="form-control" type="text" placeholder="Địa chỉ người nhận">
+                    <input class="form-control" type="text" id="dia_chi" placeholder="Địa chỉ người nhận">
                   </div>
                 </form>
               </div>
@@ -140,19 +142,19 @@
                   <form action="" method="">
                     <div class="mb-3">
                       <div class="title mb-2">*<span>Mô tả</span></div>
-                      <input class="form-control" type="text" value="">
+                      <input class="form-control" id="mo_ta" type="text" value="">
                     </div>
                     <div class="mb-3">
                       <div class="title mb-2">*</i><span>Giá trị hàng hóa</span></div>
-                      <input class="form-control" type="number" value="0">
+                      <input class="form-control" id="gia_tri" type="number" value="0">
                     </div>
                     <div class="mb-3">
                       <div class="title mb-2">*<span>Trọng lượng (g)</span></div>
-                      <input class="form-control" type="number" value="0">
+                      <input class="form-control" id="trong_luong" type="number" value="0">
                     </div>
                     <div class="mb-3">
                         <div class="title mb-2">*<span>Số lượng</span></div>
-                        <input class="form-control" type="number" min="1" value="1">
+                        <input class="form-control" id="so_luong" type="number" min="1" value="1">
                       </div>
                   </form>
                 </div>
@@ -167,7 +169,7 @@
                 <form name = 'form-pro' action="" method="">
                   <div class="mb-3">
                     <div class="title mb-2">Mã khuyến mại</span></div>
-                    <input class="form-control" type="text" value="">
+                    <input class="form-control" id="ma_khuyen_mai" type="text" value="">
                   </div>
                   <div class="mb-3">
                     <div class="title mb-2">Mã đơn hàng</span></div>
@@ -197,17 +199,30 @@
     <script src="assets/js/default/active.js"></script>
     <script src="assets/js/pwa.js"></script>
     <script>
-        var sl = 1;
+      var sl = 1;
       var url_string = window.location.href;
       var url = new URL(url_string);
       var ma = url.searchParams.get("mahd");
       var kh = url.searchParams.get("kh");
       var tt = url.searchParams.get("Tt");
       var ngay = url.searchParams.get("ngay");
+
+      function rd(){
+        let md = '';
+        for(var i = 0; i < 12; i++){
+          md+= Math.floor(Math.random() * 10);
+        }
+        return md;
+      }
+
+
+      $(document).ready(function(){
+        //console.log(rd());
+      })
       
-      $('#Hd').html(ma);
-      $('#Kh').html(kh);
-      $('#Tt').html(tt);
+      // $('#Hd').html(ma);
+      // $('#Kh').html(kh);
+      // $('#Tt').html(tt);
 
       $('#add-product').click(function(){
           sl++;
@@ -235,9 +250,46 @@
             $('#product').append(htm);
       })
 
-      var formData = new FormData(document.getElementsByName('form-pro'));
-      $("#create").click(function(){
-          console.log(formData);
+      $('#create').click(function(){
+        let data = {
+          id : Math.floor(Math.random() * 1000000001),
+          ma_don_hang: rd(),
+          nguoi_gui: $('#nguoi_gui').val(),
+          sdt_nguoi_gui: $('#sdt_nguoi_gui').val(),
+          nguoi_nhan: $('#nguoi_nhan').val(),
+          sdt_nguoi_nhan: $('#sdt_nguoi_nhan').val(),
+          dia_chi: $('#dia_chi').val(),
+          hang_hoa:{
+              "mo_ta": $('#mo_ta').val(),
+              "gia_tri": $('#gia_tri').val(),
+              "trong_luong": $('#trong_luong').val(),
+              "so_luong": $('#so_luong').val()
+            },
+          ma_khuyen_mai: $('#ma_khuyen_mai').val()
+        };
+        axios({
+            method: 'post',
+            url: 'http://localhost:3000/donhang',
+            data: {
+              id : Math.floor(Math.random() * 1000000001),
+                ma_don_hang: rd(),
+                nguoi_gui: $('#nguoi_gui').val(),
+                sdt_nguoi_gui: $('#sdt_nguoi_gui').val(),
+                nguoi_nhan: $('#nguoi_nhan').val(),
+                sdt_nguoi_nhan: $('#sdt_nguoi_nhan').val(),
+                dia_chi: $('#dia_chi').val(),
+                hang_hoa:[{
+                    mo_ta: $('#mo_ta').val(),
+                    gia_tri: $('#gia_tri').val(),
+                    trong_luong: $('#trong_luong').val(),
+                    so_luong: $('#so_luong').val()
+                  }],
+                ma_khuyen_mai: $('#ma_khuyen_mai').val()
+            }
+          }).then(function(){
+            alert('Tạo đơn hàng thành công!');
+            window.location.href = "./donhang.html";
+          });
       })
       
     </script>
