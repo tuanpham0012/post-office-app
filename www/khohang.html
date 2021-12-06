@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="style.css">
     <!-- Web App Manifest-->
     <link rel="manifest" href="manifest.json">
+
+    <style>
+      .fc{
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <!-- Preloader-->
@@ -73,14 +79,14 @@
         <div class="container">
           <div class="product-catagories">
             <div class="row g-3">
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-all'>Kho hàng</a></div>
+              <div class="col-4"><a class="shadow-sm" href="#" id='kho-hang' class="fc">Kho hàng</a></div>
               <!-- Single Catagory-->
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-iphone'>Khách hàng</a></div>
+              <div class="col-4"><a class="shadow-sm" href="#" id='khach-hang'>Khách hàng</a></div>
               <!-- Single Catagory-->
-              <div class="col-4"><a class="shadow-sm" href="#" id='products-ipad'>Người gửi</a></div>
+              <div class="col-4"><a class="shadow-sm" href="#" id='nguoi-gui'>Người gửi</a></div>
             </div>
           </div>
-          <div class="row g-3" id="product">
+          <div class="row g-3" id="kho">
             <!-- Single Weekly Product Card-->
             <!-- Single Notification-->
             <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
@@ -101,6 +107,54 @@
               <div class="noti-info" >
                 <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
                 <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất gia lộc hải dương</span>
+              </div>
+            </a>
+            
+          </div>
+          <div class="row g-3" id="khach">
+            <!-- Single Notification-->
+            <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+              <div class="noti-info" >
+                <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất+++ gia lộc hải dương</span>
+              </div>
+            </a>
+            <!-- Single Notification-->
+            <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+              <div class="noti-info" >
+                <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất++ gia lộc hải dương</span>
+              </div>
+            </a>
+            <!-- Single Notification-->
+            <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+              <div class="noti-info" >
+                <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất+++ gia lộc hải dương</span>
+              </div>
+            </a>
+            
+          </div>
+          <div class="row g-3" id="nguoi">
+            <!-- Single Notification-->
+            <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+              <div class="noti-info" >
+                <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất--- gia lộc hải dương</span>
+              </div>
+            </a>
+            <!-- Single Notification-->
+            <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+              <div class="noti-info" >
+                <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất--- gia lộc hải dương</span>
+              </div>
+            </a>
+            <!-- Single Notification-->
+            <a class="list-group-item d-flex align-items-center" href="notification-details.html" style="border-radius: 0.7rem;">
+              <div class="noti-info" >
+                <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;<span style="color: black;font-size: 1.1rem;font-weight: 500;">Phạm Quốc Tuấn - 0983776901</span><br/>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Thống nhất--- gia lộc hải dương</span>
               </div>
             </a>
             
@@ -409,69 +463,48 @@
       }
     ]
       $(document).ready(function(){
-        addData();
-        showData(phones);
+        $('#kho').show();
+        $('#kho-hang').focus();
+        $('#khach').hide();
+        $('#nguoi').hide();
 
       })
 
-      function addData(){
-        phones.forEach((phone,index) => {
-          phone.id = index;
-          phone.total = Math.floor(Math.random() * 150) + 20;
-          phone.price = Math.floor(Math.random() * 1999) + 999;
-          phone.check = Math.random() >= 0.5;
-        });
-      }
-
-      function showData(data){
-        $('#products').empty();
-        data.forEach((phone,index) => {
-          let htm = `<div class="col-12 col-md-6">
-                      <div class="card weekly-product-card">
-                        <div class="card-body d-flex align-items-center">
-                          <div class="product-thumbnail-side"><a class="wishlist-btn" href="#"></a><a class="product-thumbnail d-block" href="#"><img src="${phone.image}" width="50%" height="50%" alt=""></a></div>
-                          <div class="product-description"><a class="product-title d-block" href="#">${phone.phone_name}</a>
-                            <p class="sale-price">Giá bán: $${phone.price}</p>
-                            <div class="product-rating">Số lượng còn: ${phone.total}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>`;
-          $('#products').append(htm);
-        });
-        console.log(data);
-      }
-      $('#products-all').click( () =>{
-        showData(phones);
+      // function showData(data){
+      //   $('#products').empty();
+      //   data.forEach((phone,index) => {
+      //     let htm = `<div class="col-12 col-md-6">
+      //                 <div class="card weekly-product-card">
+      //                   <div class="card-body d-flex align-items-center">
+      //                     <div class="product-thumbnail-side"><a class="wishlist-btn" href="#"></a><a class="product-thumbnail d-block" href="#"><img src="${phone.image}" width="50%" height="50%" alt=""></a></div>
+      //                     <div class="product-description"><a class="product-title d-block" href="#">${phone.phone_name}</a>
+      //                       <p class="sale-price">Giá bán: $${phone.price}</p>
+      //                       <div class="product-rating">Số lượng còn: ${phone.total}</div>
+      //                     </div>
+      //                   </div>
+      //                 </div>
+      //               </div>`;
+      //     $('#products').append(htm);
+      //   });
+      //   console.log(data);
+      // }
+      
+      $('#kho-hang').click( () =>{
+        $('#kho').show();
+        $('#khach').hide();
+        $('#nguoi').hide();
       })
-      $('#products-iphone').click( () =>{
-        const dt = this.phones.filter(x => {return x.slug.indexOf('iphone') >= 0});
-        showData(dt);
+      $('#khach-hang').click( () =>{
+        $('#kho').hide();
+        $('#khach').show();
+        $('#nguoi').hide();
       })
-      $('#products-ipad').click( () =>{
-        const dt = this.phones.filter(x => {return x.slug.indexOf('ipad') >= 0});
-        showData(dt);
-      })
-      $('#products-watch').click( () =>{
-        const dt = this.phones.filter(x => {return x.slug.indexOf('watch') >= 0});
-        showData(dt);
+      $('#nguoi-gui').click( () =>{
+        $('#kho').hide();
+        $('#khach').hide();
+        $('#nguoi').show();
       })
 
-      $('#products-filler').change(function(){
-        let id = $('#products-filler').val();
-        if(id == 1){
-          const dt = phones.filter(x => {return x.check});
-          showData(dt);
-        }else if(id == 2){
-          const dt = phones.filter(x => {return x.total < 30});
-          showData(dt);
-        }else if(id == 3){
-          const dt = phones.filter(x => {return x.total > 140});
-          showData(dt);
-        }else{
-          showData(phones);
-        }
-      })
     </script>
   </body>
 </html>
