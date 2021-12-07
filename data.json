@@ -2,7 +2,7 @@
   "donhang": [
     {
       "id": 1,
-      "ma_don_hang": "vdvdv",
+      "ma_don_hang": "98495885564",
       "nguoi_gui": "Phạm Quốc Tuấn",
       "sdt_nguoi_gui": "0983776776",
       "nguoi_nhan": "Lê thị loan",
@@ -21,9 +21,9 @@
     },
     {
       "id": 2,
-      "ma_don_hang": "vdvdv",
+      "ma_don_hang": "847555524185",
       "nguoi_gui": "Phạm Quốc Tuấn",
-      "sdt_nguoi_gui": "Nommand",
+      "sdt_nguoi_gui": "0321321521",
       "nguoi_nhan": "123 Subway, NDC",
       "sdt_nguoi_nhan": "09889898",
       "dia_chi": "Hai duong",
@@ -61,7 +61,7 @@
         }
       ],
       "ma_khuyen_mai": "66666",
-      "trang_thai": "Chờ duyệt"
+      "trang_thai": "Đã hủy"
     },
     {
       "id": 480064160,
@@ -81,6 +81,44 @@
       ],
       "ma_khuyen_mai": "27061999",
       "trang_thai": "Chờ duyệt"
+    },
+    {
+      "id": 530958284,
+      "ma_don_hang": "483205639636",
+      "nguoi_gui": "Phạm Quốc Tuấn",
+      "sdt_nguoi_gui": "0983776901",
+      "nguoi_nhan": "Trần Quốc Tuấn",
+      "sdt_nguoi_nhan": "0325664658",
+      "dia_chi": "Gia lộc - Hải Dương",
+      "hang_hoa": [
+        {
+          "mo_ta": "TV LG 4k URDHFJD",
+          "gia_tri": "010000000",
+          "trong_luong": "010000",
+          "so_luong": "1"
+        }
+      ],
+      "ma_khuyen_mai": "888888888",
+      "trang_thai": "Chờ duyệt"
+    },
+    {
+      "id": 740198433,
+      "ma_don_hang": "312487432179",
+      "nguoi_gui": "Phạm Quốc Tuấn",
+      "sdt_nguoi_gui": "0983776901",
+      "nguoi_nhan": "Nguyễn Văn B",
+      "sdt_nguoi_nhan": "0988777666",
+      "dia_chi": "Tiền Hải - Thái Bình",
+      "hang_hoa": [
+        {
+          "mo_ta": "Tủ lạnh lg 330l",
+          "gia_tri": "06000000",
+          "trong_luong": "0100000",
+          "so_luong": "1"
+        }
+      ],
+      "ma_khuyen_mai": "2706199922",
+      "trang_thai": "Đã hủy"
     }
   ],
   "khohang": [
@@ -363,11 +401,32 @@
   ],
   "giohang": [
     {
-      "id": 4,
-      "name": "Mens Casual Slim Fit",
-      "price": 15.99,
-      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "id": 1,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "sl": "3"
+    },
+    {
+      "id": 6,
+      "name": "Solid Gold Petite Micropave ",
+      "price": 168,
+      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
       "sl": "2"
+    },
+    {
+      "id": 9,
+      "name": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+      "price": 64,
+      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "sl": "2"
+    },
+    {
+      "id": 2,
+      "name": "Mens Casual Premium Slim Fit T-Shirts ",
+      "price": 22.3,
+      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "sl": "1"
     }
   ],
   "sale": [
@@ -582,7 +641,7 @@
       "thumbnailUrl": "https://via.placeholder.com/150/372c93"
     }
   ],
-  "notification":[
+  "notification": [
     {
       "userId": 1,
       "id": 1,

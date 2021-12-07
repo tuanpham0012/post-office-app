@@ -199,6 +199,7 @@
             $('#trong_luong').val(data.hang_hoa[0].trong_luong),
             $('#so_luong').val(data.hang_hoa[0].so_luong)
             $('#ma_khuyen_mai').val(data.ma_khuyen_mai);
+            $('#maDh').text(data.ma_don_hang);
           });
       $('#update').click(function(){
         axios({

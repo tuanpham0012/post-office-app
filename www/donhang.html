@@ -129,10 +129,10 @@
     <div class="container h-100 px-0">
       <div class="suha-footer-nav h-100">
         <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
-          <li><a href="home.html"><i class="lni lni-home"></i>Trang chủ</a></li>
-          <li><a href="message.html"><i class="lni lni-life-ring"></i>Tin nhắn</a></li>
-          <li class="active"><a href="#"><i class="lni lni-shopping-basket"></i>Hóa đơn</a></li>
-          <li><a href="settings.html"><i class="lni lni-cog"></i>Cài đặt</a></li>
+          <li class="active"><a href="#"><i class="lni lni-home"></i>Trang chủ</a></li>
+          <li><a href="./cart.html"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Giỏ hàng</a></li>
+          <li><a href="./thongbao.html"><i class="fa fa-bell-o" aria-hidden="true"></i>Thông báo</a></li>
+          <li><a href="settings.html"><i class="fa fa-list" aria-hidden="true"></i>Danh mục</a></li>
         </ul>
       </div>
     </div>
@@ -165,9 +165,10 @@
       }).done(function (response) {
         console.log(response);
         $('#list').empty();
-        response.forEach((data, index) => {
+        response.reverse().forEach((data, index) => {
           let sp = '';
           let gt = 0;
+          let cl = '';
           if(data.hang_hoa.length > 0){
               data.hang_hoa.forEach((d,i) =>{
               sp+= `<div class="single-profile-data d-flex align-items-center justify-content-between">
@@ -180,7 +181,9 @@
                       <div class="content"><i class="lni lni-star-filled"></i>&nbsp;&nbsp;<span>${data.hang_hoa.mo_ta} x ${data.hang_hoa.so_luong}</span></div>
                     </div>`;
           }
-          
+          if(data.trang_thai == 'Đã hủy'){
+            cl = 'disabled';
+          }
           let htm = `<div class="billing-information-card mb-3">
                       <div class="card shipping-method-choose-title-card bg-success">
                         <div class="card-body">
@@ -207,7 +210,7 @@
                           <div class="gr-btn">
                             <button class="btn" onclick="copy(${data.ma_don_hang})">Sao chép đơn</button>
                             <a href="./suadonhang.html?id=${data.id}"><button class="btn">Sửa đơn</button></a>
-                            <button class="btn" onclick="cancel(${data.id})">Hủy đơn</button>
+                            <button class="btn" ${cl} onclick="cancel(${data.id})">Hủy đơn</button>
                           </div>
                         </div>
                       </div>
