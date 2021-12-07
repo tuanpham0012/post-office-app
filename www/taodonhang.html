@@ -200,12 +200,6 @@
     <script src="assets/js/pwa.js"></script>
     <script>
       var sl = 1;
-      var url_string = window.location.href;
-      var url = new URL(url_string);
-      var ma = url.searchParams.get("mahd");
-      var kh = url.searchParams.get("kh");
-      var tt = url.searchParams.get("Tt");
-      var ngay = url.searchParams.get("ngay");
 
       function rd(){
         let md = '';
@@ -219,10 +213,6 @@
       $(document).ready(function(){
         //console.log(rd());
       })
-      
-      // $('#Hd').html(ma);
-      // $('#Kh').html(kh);
-      // $('#Tt').html(tt);
 
       $('#add-product').click(function(){
           sl++;
@@ -284,7 +274,8 @@
                     trong_luong: $('#trong_luong').val(),
                     so_luong: $('#so_luong').val()
                   }],
-                ma_khuyen_mai: $('#ma_khuyen_mai').val()
+                ma_khuyen_mai: $('#ma_khuyen_mai').val(),
+                trang_thai: 'Chờ duyệt'
             }
           }).then(function(){
             alert('Tạo đơn hàng thành công!');

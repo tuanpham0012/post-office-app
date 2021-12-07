@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="assets/css/default/lineicons.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- Stylesheet-->
   <link rel="stylesheet" href="style.css">
   <!-- Web App Manifest-->
@@ -117,84 +118,7 @@
       </div>
       <!-- Notifications Area-->
       <div class="notification-area pb-2" id="list">
-        <div class="billing-information-card mb-3">
-          <div class="card shipping-method-choose-title-card bg-success">
-            <div class="card-body">
-              <h6 class="text-center mb-0 text-white">DH000000001</h6>
-            </div>
-          </div>
-          <div class="card user-data-card">
-            <div class="card-body">
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-user"></i>&nbsp;&nbsp;<span>Phạm Quốc Tuấn - 0983776901</span>
-                </div>
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-phone"></i>&nbsp;&nbsp;<span>0983776901</span></div>
-
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-map-marker"></i>&nbsp;&nbsp;<span>Thống nhất - Gia lộc - Hải
-                    Dương</span></div>
-
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-star-filled"></i>&nbsp;&nbsp;<span>Xiaomi redmi note 10
-                    pro</span></div>
-
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-dollar"></i>&nbsp;&nbsp;<span>1000000đ</span></div>
-
-              </div>
-              <!-- Edit Address-->
-              <div class="gr-btn">
-                <button class="btn">Sao chép đơn</button>
-                <a href="./suadonhang.html"><button class="btn">Sửa đơn</button></a>
-                <button class="btn">Hủy đơn</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="billing-information-card mb-3">
-          <div class="card shipping-method-choose-title-card bg-success">
-            <div class="card-body">
-              <h6 class="text-center mb-0 text-white">DH000000001</h6>
-            </div>
-          </div>
-          <div class="card user-data-card">
-            <div class="card-body">
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-user"></i>&nbsp;&nbsp;<span>Phạm Quốc Tuấn - 0983776901</span>
-                </div>
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-phone"></i>&nbsp;&nbsp;<span>0983776901</span></div>
-
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-map-marker"></i>&nbsp;&nbsp;<span>Thống nhất - Gia lộc - Hải
-                    Dương</span></div>
-
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-star-filled"></i>&nbsp;&nbsp;<span>Xiaomi redmi note 10
-                    pro</span></div>
-
-              </div>
-              <div class="single-profile-data d-flex align-items-center justify-content-between">
-                <div class="content"><i class="lni lni-dollar"></i>&nbsp;&nbsp;<span>1000000đ</span></div>
-
-              </div>
-              <!-- Edit Address-->
-              <div class="gr-btn">
-                <button class="btn">Sao chép đơn</button>
-                <button class="btn">Sửa đơn</button>
-                <button class="btn">Hủy đơn</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -230,7 +154,7 @@
     var hoadon;
 
     $(document).ready(function () {
-      showData(hoadon);
+      showData();
 
     })
 
@@ -260,7 +184,7 @@
           let htm = `<div class="billing-information-card mb-3">
                       <div class="card shipping-method-choose-title-card bg-success">
                         <div class="card-body">
-                          <h6 class="text-center mb-0 text-white">${data.ma_don_hang}</h6>
+                          <h6 class="text-center mb-0 text-white">${data.ma_don_hang} * ${data.trang_thai}</h6>
                         </div>
                       </div>
                       <div class="card user-data-card">
@@ -281,9 +205,9 @@
                           </div>
                           <!-- Edit Address-->
                           <div class="gr-btn">
-                            <button class="btn">Sao chép đơn</button>
+                            <button class="btn" onclick="copy(${data.ma_don_hang})">Sao chép đơn</button>
                             <a href="./suadonhang.html?id=${data.id}"><button class="btn">Sửa đơn</button></a>
-                            <button class="btn">Hủy đơn</button>
+                            <button class="btn" onclick="cancel(${data.id})">Hủy đơn</button>
                           </div>
                         </div>
                       </div>
@@ -291,7 +215,29 @@
           $('#list').append(htm);
         });
       })
+    }
 
+    function cancel(id) {
+      let cf = confirm('Bạn có muốn hủy đơn hàng không?');
+      if(cf){
+        axios({
+          'url': 'http://localhost:3000/donhang/'+id,
+          'method': 'patch',
+          'data':{
+            'trang_thai': 'Đã hủy'
+          }
+        }).then(function(response) {
+          alert('Hủy đơn hàng thành công!');
+          showData()
+        }).catch(function(err) {
+          console.log(err);
+        })
+        
+      }
+    }
+
+    function copy(code) {
+      alert("Sao chép đơn hàng " + code + " thành công!");
     }
   </script>
 </body>

@@ -49,15 +49,19 @@
     <div class="container h-100 d-flex align-items-center justify-content-between">
       <!-- Back Button-->
       <div class="back-button"><a href="./sanpham.html">
-          <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+          <svg class="bi bi-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z">
+            </path>
           </svg></a></div>
       <!-- Page Title-->
       <div class="page-heading">
         <h6 class="mb-0">Giỏ hàng của tôi</h6>
       </div>
       <!-- Navbar Toggler-->
-      <div class="suha-navbar-toggler d-flex justify-content-between flex-wrap" id="suhaNavbarToggler"><span></span><span></span><span></span></div>
+      <div class="suha-navbar-toggler d-flex justify-content-between flex-wrap" id="suhaNavbarToggler">
+        <span></span><span></span><span></span></div>
     </div>
   </div>
   <!-- Sidenav Black Overlay-->
@@ -75,7 +79,8 @@
     <!-- Sidenav Nav-->
     <ul class="sidenav-nav ps-0">
       <li><a href="profile.html"><i class="lni lni-user"></i>My Profile</a></li>
-      <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span class="ms-3 badge badge-warning">3</span></a></li>
+      <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span
+            class="ms-3 badge badge-warning">3</span></a></li>
       <li class="suha-dropdown-menu"><a href="#"><i class="lni lni-cart"></i>Shop Pages</a>
         <ul>
           <li><a href="shop-grid.html">- Shop Grid</a></li>
@@ -143,7 +148,8 @@
         <!-- Cart Amount Area-->
         <div class="card cart-amount-area">
           <div class="card-body d-flex align-items-center justify-content-between">
-            <h5 class="total-price mb-0">$<span class="" id="total"></span></h5><a class="btn btn-warning" href="checkout.html">Đặt hàng ngay</a>
+            <h5 class="total-price mb-0">$<span class="" id="total"></span></h5><a class="btn btn-warning"
+              href="./thanhtoan.html">Đặt hàng ngay</a>
           </div>
         </div>
       </div>
@@ -156,7 +162,8 @@
     <div class="container h-100 px-0">
       <div class="suha-footer-nav h-100">
         <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
-          <li class="active"><a href="donhang.html"><i class="fa fa-product-hunt" aria-hidden="true"></i>Sản phẩm</a></li>
+          <li class="active"><a href="./sanpham.html"><i class="fa fa-product-hunt" aria-hidden="true"></i>Sản phẩm</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -176,20 +183,24 @@
   <script src="assets/js/pwa.js"></script>
 
   <script>
-      var total = 0;
+    var total = 0;
 
+    $(document).ready(function () {
+      load();
+    })
 
-    axios({
-      method: 'get',
-      url: 'http://localhost:3000/giohang',
+    function load() {
+      axios({
+        method: 'get',
+        url: 'http://localhost:3000/giohang',
 
-    }).then(function (response) {
+      }).then(function (response) {
         total = 0;
-      $('#cart').empty();
-      response.data.forEach((item, index) => {
-        total+= ( parseInt(item.price) * parseInt(item.sl));
-        let htm = `<tr>
-                        <th scope="row"><a class="remove-product" href="#"><i class="lni lni-close"></i></a></th>
+        $('#cart').empty();
+        response.data.forEach((item, index) => {
+          total += (parseInt(item.price) * parseInt(item.sl));
+          let htm = `<tr>
+                        <th scope="row"><a class="remove-product" onclick="del(${item.id})" href="#"><i class="lni lni-close"></i></a></th>
                         <td><img src="${item.image}" alt=""></td>
                         <td><a href="single-product.html">${item.name}<span>${item.price} × ${item.sl}</span></a></td>
                         <td>
@@ -199,13 +210,30 @@
                         </td>
                     </tr>`;
 
-        $('#cart').append(htm);
-      });
-      console.log(total);
-      $('#total').text(total);
+          $('#cart').append(htm);
+        });
+        console.log(total);
+        $('#total').text(total);
 
-    });
-  
+      });
+    }
+
+    function del(id) {
+      let cf = confirm("Bạn muốn xóa sản phẩm này");
+      if(cf){
+        axios({
+          method: 'delete',
+          url: 'http://localhost:3000/giohang/'+ id
+        }).then(function(response) {
+          load();
+        }).catch(function(err) {
+          console.log(err);
+        })
+      }
+    }
+
+
+
   </script>
 </body>
 
