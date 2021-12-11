@@ -184,7 +184,7 @@
       
       axios({
             method: 'get',
-            url: 'http://localhost:3000/donhang/'+id,
+            url: 'http://10.0.2.2:3000/donhang/'+id,
             
           }).then(function(response){
             console.log(response.data);
@@ -204,7 +204,7 @@
       $('#update').click(function(){
         axios({
             method: 'patch',
-            url: 'http://localhost:3000/donhang/'+id,
+            url: 'http://10.0.2.2:3000/donhang/'+id,
             data: {
               nguoi_gui: $('#nguoi_gui').val(),
               sdt_nguoi_gui: $('#sdt_nguoi_gui').val(),

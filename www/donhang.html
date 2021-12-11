@@ -160,7 +160,7 @@
 
     function showData() {
       $.ajax({
-        'url': 'http://localhost:3000/donhang',
+        'url': 'http://10.0.2.2:3000/donhang',
         'type': 'get',
       }).done(function (response) {
         console.log(response);
@@ -224,7 +224,7 @@
       let cf = confirm('Bạn có muốn hủy đơn hàng không?');
       if(cf){
         axios({
-          'url': 'http://localhost:3000/donhang/'+id,
+          'url': 'http://10.0.2.2:3000/donhang/'+id,
           'method': 'patch',
           'data':{
             'trang_thai': 'Đã hủy'

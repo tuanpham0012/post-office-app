@@ -55,19 +55,19 @@
                         src="assets/img/core-img/logo-white.png" alt="">
                     <!-- Register Form-->
                     <div class="register-form mt-5 px-4">
-                        <form action="" method="">
+                        <form action="" method="GET">
                             <div class="form-group text-start mb-4"><span>Số điện thoại</span>
                                 <label for="username"><i class="lni lni-phone"></i></label>
                                 <input class="form-control" id="phone" type="text" placeholder="Nhập số điện thoại">
                             </div>
-                    
+
                             <button class="btn btn-success btn-lg w-100" id="loginForm" type="button">Nhận OTP</button>
                         </form>
                     </div>
                     <!-- Login Meta-->
                     <div class="login-meta-data"><a class="forgot-password d-block mt-3 mb-1"
                             href="forget-password.html">Quên mật khẩu?</a>
-                        <p class="mb-0">Chưa có tài khoản?<a class="ms-1" href="register.html">Đăng kí ngay</a></p>
+                        <p class="mb-0">Chưa có tài khoản?<a class="ms-1" href="./dangki.html">Đăng kí ngay</a></p>
                     </div>
                 </div>
             </div>
@@ -90,24 +90,39 @@
 </body>
 
 <script>
-    // $('#loginForm').click(function(e){
-    //     e.preventDefault();
-    //     let user = $('#username').val();
-    //     let password = $('#password').val();
-    //     if(user == 'tuanpham0012' && password == 'anhem12345'){
-    //         window.location.href = "home.html";
-    //     }else{
-    //         alert('Sai tên tài khoản hoặc mật khẩu!');
-    //     }
-    // })
-    $('#loginForm').click(function() {
+
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var phone = url.searchParams.get("phone");
+
+    $(document).ready(function () {
+        $('#phone').val(phone);
+        axios({
+            method: 'get',
+            url: 'http://10.0.2.2:3000/account'
+        }).then(function (res) {
+            console.log(res.data);
+            if (phone != undefined) {
+                const account = res.data.filter(x => x.sdt == phone);
+                console.log(account);
+                if (account.length == 0) {
+                    alert("Số điện thoại chưa được đăng kí!");
+                } else {
+                    window.location.href = './otp-confirm.html';
+                }
+            }
+        })
+        
+    })
+
+    $('#loginForm').click(function () {
         var sdt = $('#phone').val();
-        if(sdt.length == 0){
+        if (sdt.length == 0) {
             alert('Chưa nhập số điện thoại!');
-        }else if( sdt.length != 10){
+        } else if (sdt.length != 10) {
             alert('Số điện thoại không đúng định dạng!');
-        }else{
-            window.location.href = './otp-confirm.html';
+        } else {
+            window.location.href = './login1.html?phone=' + sdt;
         }
     })
 </script>
